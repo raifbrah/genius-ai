@@ -23,21 +23,6 @@ export default {
 </script>
 
 <style scoped>
-.blur-bg {
-  z-index: 1000;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #0005;
-  backdrop-filter: blur(5px);
-}
 .wrapper {
   display: flex;
   align-items: center;

@@ -52,6 +52,7 @@ export default {
   width: 100%;
 
   font-size: 16px;
+  font-family: inherit;
   padding: 10px;
   outline: none;
   border: 1px solid #aaa;

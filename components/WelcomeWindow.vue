@@ -1,0 +1,113 @@
+<template>
+  <div v-if="visibility" class="blur-bg">
+    <div class="welcome-window">
+      <div v-if="page === 1" class="welcome-window__text">
+        <h3>Привет, дорогой друг!👋</h3>
+        <p>
+          Меня зовут
+          <a href="https://www.instagram.com/raifbrah/" target="_blank">Раиф</a
+          >, я разработчик данного приложения.
+        </p>
+        <p>Я сделал его для тебя полностью бесплатным.</p>
+        <p>
+          Но если ты захочешь поблагодарить меня за старания, перейди в
+          настройки и нажми кнопку
+          <a href="/payments" target="_blank">Отблагодарить</a>
+        </p>
+      </div>
+
+      <div v-if="page === 2" class="welcome-window__text">
+        <h3>API ключ 🔑</h3>
+        <p>
+          API ключ нужен для работы приложения, без него не получиться связаться
+          с сервером для обработки вашего запроса.
+        </p>
+        <p>Бояться не стоит, он будет храниться только на вашем устройстве.</p>
+        <p>
+          Для получения API ключа необходимо перейти по
+          <a href="https://platform.openai.com/account/api-keys" target="_blank"
+            >данной ссылке</a
+          >
+          и вставить его ниже👇
+        </p>
+        <p>
+          ❗ Если вы находитесь на территории России, по ссылке нужно переходить
+          со включенным VPN.
+        </p>
+        <ApiKeyInput class="api-key-input-component" />
+      </div>
+
+      <div class="welcome-window__buttons">
+        <TheButton v-if="page > 1" @click="page--" title="Назад" />
+        <TheButton
+          v-if="page < 2"
+          @click="page++"
+          title="Дальше"
+          class="welcome-window__button_right"
+        />
+        <TheButton
+          @click="close"
+          v-if="page === 2"
+          title="Готово"
+          class="welcome-window__button_right"
+        />
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      page: 1,
+      visibility: false,
+    };
+  },
+  mounted() {
+    if (localStorage.getItem("WelcomeWindowVisibility")) {
+      this.visibility = false;
+    } else {
+      this.visibility = true;
+    }
+  },
+  methods: {
+    close() {
+      this.visibility = false;
+      localStorage.setItem("WelcomeWindowVisibility", false);
+    },
+  },
+};
+</script>
+
+<style scoped>
+p {
+  margin: 10px 0px;
+}
+.welcome-window {
+  gap: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  max-width: min(90vw, 550px);
+  max-height: 90vh;
+  min-height: 250px;
+  overflow-y: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 20px;
+}
+.welcome-window__buttons {
+  gap: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.welcome-window__button_right {
+  margin-left: auto;
+}
+
+.api-key-input-component {
+  margin-top: 20px;
+}
+</style>

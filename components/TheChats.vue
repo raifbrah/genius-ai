@@ -13,6 +13,7 @@
     >
       <Markdown :source="chat.content" />
     </li>
+    <TypingProgress v-if="typingProgress" />
   </ul>
 </template>
 
@@ -25,6 +26,7 @@ export default {
   },
   props: {
     chats: Object,
+    typingProgress: Boolean,
   },
 };
 </script>
@@ -43,7 +45,7 @@ export default {
   width: 80%;
   max-width: max-content;
   padding: 10px 13px;
-  background: #eaeaea;
+  background: var(--color_systemGray);
   border: 1px solid #e1e1e1;
   border-radius: 17px;
 }
@@ -71,7 +73,7 @@ export default {
 }
 
 .chat code {
-  font-weight: 600;
+  font-weight: bold;
 }
 .chat pre {
   overflow-x: auto;

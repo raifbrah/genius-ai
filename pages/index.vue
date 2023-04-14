@@ -1,8 +1,12 @@
 <template>
   <div class="container">
     <TheHeader @clear-chat="clearChat" class="the-header" />
-    <TheChats :chats="chats" />
-    <ChatInput @sendMyMessage="sendMyMessage" class="chat-input" />
+    <TheChats :typingProgress="typingProgress" :chats="chats" />
+    <ChatInput
+      :generationProcess="generationProcess"
+      @sendMyMessage="sendMyMessage"
+      class="chat-input"
+    />
   </div>
 </template>
 
@@ -11,6 +15,8 @@ export default {
   data() {
     return {
       chats: [],
+      generationProcess: false,
+      typingProgress: false,
     };
   },
   mounted() {
@@ -19,16 +25,18 @@ export default {
     }
   },
   methods: {
-    clearChat() {
+    async clearChat() {
       this.chats = [];
       localStorage.setItem("chats", JSON.stringify(this.chats));
     },
-    sendMyMessage(myMessage) {
+    async sendMyMessage(myMessage) {
+      this.generationProcess = true;
+      this.typingProgress = true;
       this.chats.push({
         role: "user",
         content: myMessage,
       });
-      localStorage.setItem("chats", JSON.stringify(this.chats));
+      localStorage.setItem("chats", await JSON.stringify(this.chats));
 
       this.generatingResponse();
     },
@@ -63,6 +71,8 @@ export default {
         const { value, done } = await reader.read();
         if (done) break;
 
+        this.typingProgress = false;
+
         if (this.scrollDistanceToTheBottom() < 100) {
           window.scroll({
             top: document.body.scrollHeight,
@@ -78,7 +88,7 @@ export default {
           const message = line.replace(/^data: /, "");
           if (message === "[DONE]") {
             localStorage.setItem("chats", JSON.stringify(this.chats));
-            return;
+            break;
           }
 
           const json = JSON.parse(message);
@@ -89,6 +99,7 @@ export default {
           }
         }
       }
+      this.generationProcess = false;
     },
     scrollDistanceToTheBottom() {
       const scrollTop =

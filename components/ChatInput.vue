@@ -7,7 +7,13 @@
       type="text"
       placeholder="Type a message..."
     />
-    <SendButton @click="sendMyMessage" class="send-button" />
+    <SendButton
+      @click="sendMyMessage"
+      :class="{
+        'send-button_disabled': generationProcess,
+      }"
+      class="send-button"
+    />
   </div>
 </template>
 
@@ -18,9 +24,12 @@ export default {
       myMessage: "",
     };
   },
+  props: {
+    generationProcess: Boolean,
+  },
   methods: {
     sendMyMessage() {
-      if (this.myMessage.trim() !== "") {
+      if (this.myMessage.trim() !== "" && this.generationProcess === false) {
         this.$emit("sendMyMessage", this.myMessage);
         this.myMessage = "";
       }
@@ -55,5 +64,8 @@ export default {
   height: 35px;
 
   cursor: pointer;
+}
+.send-button_disabled {
+  opacity: 0.5;
 }
 </style>

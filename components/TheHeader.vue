@@ -2,16 +2,16 @@
   <header class="header blur-panel">
     <div class="header__left">
       <NuxtLink v-if="$route.path === '/'" to="/settings" class="header__btn"
-        >Settings</NuxtLink
+        >Настройки</NuxtLink
       >
       <NuxtLink v-if="$route.path === '/settings'" to="/" class="header__btn"
-        >Back</NuxtLink
+        >Назад</NuxtLink
       >
     </div>
     <h4 class="header__title">{{ titleName }}</h4>
     <div class="header__right">
       <span v-if="$route.path === '/'" @click="clearChat" class="header__btn"
-        >Clear</span
+        >Очистить</span
       >
     </div>
   </header>
@@ -29,7 +29,7 @@ export default {
       if (this.$route.path === "/") {
         return "ChatGPT";
       } else if (this.$route.path === "/settings") {
-        return "Settings";
+        return "Настройки";
       }
     },
   },

@@ -5,7 +5,7 @@
       v-model="myMessage"
       class="input"
       type="text"
-      placeholder="Type a message..."
+      placeholder="Введите запрос..."
     />
     <SendButton
       @click="sendMyMessage"

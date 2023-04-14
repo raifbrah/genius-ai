@@ -37,6 +37,10 @@ export default {
         content: myMessage,
       });
       localStorage.setItem("chats", await JSON.stringify(this.chats));
+      window.scroll({
+        top: document.body.scrollHeight,
+        behavior: "smooth",
+      });
 
       this.generatingResponse();
     },

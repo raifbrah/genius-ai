@@ -7,24 +7,26 @@
         :api-validation-status="apiValidationStatus"
       />
 
-      <SettingsCategory title="api key">
+      <SettingsCategory title="api ключ">
         <div class="elem">
           <input
             @input="setApiKey"
             v-model="apiKey"
             class="elem__input"
             type="password"
-            placeholder="Type your API key..."
+            placeholder="Введи ключ API..."
           />
         </div>
         <div class="elem">
-          <span @click="validateApiKey" class="elem__button">Validate</span>
+          <span @click="validateApiKey" class="elem__button"
+            >Проверить ключ</span
+          >
         </div>
       </SettingsCategory>
-      <SettingsCategory title="support">
+      <SettingsCategory title="Поддержка">
         <div class="elem">
           <a class="elem__button" href="mailto:raifbrah@yandex.ru"
-            >Contact Us</a
+            >Связаться со мной</a
           >
         </div>
         <div class="elem">
@@ -32,7 +34,7 @@
             class="elem__button"
             target="_blank"
             href="https://platform.openai.com/account/api-keys"
-            >API Keys</a
+            >API ключи</a
           >
         </div>
       </SettingsCategory>

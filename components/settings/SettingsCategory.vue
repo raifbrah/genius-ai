@@ -1,6 +1,6 @@
 <template>
   <div class="settings-category">
-    <h5 class="title">{{ title }}</h5>
+    <h6 class="title">{{ title }}</h6>
     <div class="elements">
       <slot></slot>
     </div>

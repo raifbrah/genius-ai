@@ -61,7 +61,9 @@ export default {
             }),
           },
           { responseType: "stream" }
-        );
+        ).catch((err) => {
+          console.log(err);
+        });
 
         let mdText = "";
         let pushToChats = false;
@@ -110,11 +112,15 @@ export default {
           }
         }
         this.generationProcess = false;
+
+        if (response.status === 401) {
+          alert("API ключ отсутсвуют или не действительный");
+        }
       } catch (error) {
         this.typingProgress = false;
         this.generationProcess = false;
         console.error("Error:", error);
-        alert("Проблемы с интернетом или на стороне сервера😞");
+        alert("Похоже проблемы с интернетом 🤔\nПовторите попытку позже.");
       }
     },
     scrollDistanceToTheBottom() {

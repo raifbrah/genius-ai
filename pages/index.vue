@@ -61,9 +61,7 @@ export default {
             }),
           },
           { responseType: "stream" }
-        ).catch((err) => {
-          console.log(err);
-        });
+        );
 
         let mdText = "";
         let pushToChats = false;

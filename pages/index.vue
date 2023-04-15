@@ -45,65 +45,77 @@ export default {
       this.generatingResponse();
     },
     async generatingResponse() {
-      const response = await fetch(
-        "https://api.openai.com/v1/chat/completions",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json;charset=utf-8",
-            Authorization: `Bearer ${localStorage.getItem("apiKey")}`,
+      try {
+        const response = await fetch(
+          "https://api.openai.com/v1/chat/completions",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json;charset=utf-8",
+              Authorization: `Bearer ${localStorage.getItem("apiKey")}`,
+            },
+            body: JSON.stringify({
+              model: "gpt-3.5-turbo",
+              messages: this.chats,
+              stream: true,
+            }),
           },
-          body: JSON.stringify({
-            model: "gpt-3.5-turbo",
-            messages: this.chats,
-            stream: true,
-          }),
-        },
-        { responseType: "stream" }
-      );
+          { responseType: "stream" }
+        );
 
-      let mdText = "";
-      this.chats.push({
-        role: "assistant",
-      });
+        let mdText = "";
+        let pushToChats = false;
 
-      const reader = response.body
-        .pipeThrough(new TextDecoderStream())
-        .getReader();
+        const reader = response.body
+          .pipeThrough(new TextDecoderStream())
+          .getReader();
 
-      while (true) {
-        const { value, done } = await reader.read();
-        if (done) break;
+        while (true) {
+          const { value, done } = await reader.read();
+          if (done) break;
 
+          this.typingProgress = false;
+
+          if (this.scrollDistanceToTheBottom() < 100) {
+            window.scroll({
+              top: document.body.scrollHeight,
+              behavior: "smooth",
+            });
+          }
+
+          const lines = value
+            .split("\n")
+            .filter((line) => line.trim().startsWith("data: "));
+
+          for (const line of lines) {
+            const message = line.replace(/^data: /, "");
+            if (message === "[DONE]") {
+              localStorage.setItem("chats", JSON.stringify(this.chats));
+              break;
+            }
+
+            if (pushToChats === false) {
+              pushToChats = true;
+              this.chats.push({
+                role: "assistant",
+              });
+            }
+
+            const json = JSON.parse(message);
+            const token = json.choices[0].delta.content;
+            if (token) {
+              mdText += token;
+              this.chats[this.chats.length - 1].content = mdText;
+            }
+          }
+        }
+        this.generationProcess = false;
+      } catch (error) {
         this.typingProgress = false;
-
-        if (this.scrollDistanceToTheBottom() < 100) {
-          window.scroll({
-            top: document.body.scrollHeight,
-            behavior: "smooth",
-          });
-        }
-
-        const lines = value
-          .split("\n")
-          .filter((line) => line.trim().startsWith("data: "));
-
-        for (const line of lines) {
-          const message = line.replace(/^data: /, "");
-          if (message === "[DONE]") {
-            localStorage.setItem("chats", JSON.stringify(this.chats));
-            break;
-          }
-
-          const json = JSON.parse(message);
-          const token = json.choices[0].delta.content;
-          if (token) {
-            mdText += token;
-            this.chats[this.chats.length - 1].content = mdText;
-          }
-        }
+        this.generationProcess = false;
+        console.error("Error:", error);
+        alert("Проблемы с интернетом или на стороне сервера😞");
       }
-      this.generationProcess = false;
     },
     scrollDistanceToTheBottom() {
       const scrollTop =

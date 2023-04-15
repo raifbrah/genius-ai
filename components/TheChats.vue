@@ -62,10 +62,19 @@ export default {
   flex-direction: column;
   gap: 5px;
   padding-left: 2rem;
-  margin: 1em 0px;
+  margin: 1rem 0px;
 }
 .chat ul {
   list-style: disc;
+}
+.chat > div > p {
+  margin: 1rem 0px;
+}
+.chat > div > p:first-child {
+  margin-top: 0px;
+}
+.chat > div > p:last-child {
+  margin-bottom: 0px;
 }
 
 .chat * {

@@ -4,6 +4,5 @@
 <template>
   <div>
     <NuxtPage />
-    <WelcomeWindow />
   </div>
 </template>

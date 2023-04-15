@@ -7,6 +7,7 @@
       @sendMyMessage="sendMyMessage"
       class="chat-input"
     />
+    <WelcomeWindow />
   </div>
 </template>
 

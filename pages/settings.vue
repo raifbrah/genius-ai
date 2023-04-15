@@ -23,7 +23,16 @@
           >
         </div>
       </SettingsCategory>
+
       <SettingsCategory title="Поддержка">
+        <div class="elem">
+          <a
+            class="elem__button"
+            target="_blank"
+            href="https://platform.openai.com/account/api-keys"
+            >API ключи</a
+          >
+        </div>
         <div class="elem">
           <a class="elem__button" href="mailto:raifbrah@yandex.ru"
             >Связаться со мной</a
@@ -33,9 +42,47 @@
           <a
             class="elem__button"
             target="_blank"
-            href="https://platform.openai.com/account/api-keys"
-            >API ключи</a
+            href="https://www.instagram.com/raifbrah/"
+            >Instagram</a
           >
+        </div>
+      </SettingsCategory>
+
+      <SettingsCategory title="Поддержать разработчика донатом">
+        <div class="elem">
+          <a
+            class="elem__button"
+            target="_blank"
+            href="https://www.tinkoff.ru/rm/yarullin.raif1/qLMMc14619"
+            >Tinkoff</a
+          >
+        </div>
+        <div class="elem">
+          <a
+            class="elem__button"
+            target="_blank"
+            href="http://qiwi.com/n/RAIFBRAH"
+            >Qiwi</a
+          >
+        </div>
+        <div class="elem">
+          <a
+            class="elem__button"
+            target="_blank"
+            href="https://forms.yandex.ru/u/643a9df25056901613eaef4d/"
+            >Юmoney</a
+          >
+        </div>
+        <div class="elem">
+          <a
+            class="elem__button"
+            target="_blank"
+            href="https://boosty.to/raifbrah/donate"
+            >Boosty</a
+          >
+        </div>
+        <div class="elem">
+          <span>USDT | TRC20 : TBR5DTmEaMHWp7DW6occQFhJkzJ8t8fLBJ</span>
         </div>
       </SettingsCategory>
     </div>
@@ -118,6 +165,7 @@ export default {
 }
 
 .elem {
+  overflow-wrap: anywhere;
   display: flex;
   align-items: center;
 

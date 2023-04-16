@@ -77,7 +77,7 @@ export default {
 
           this.typingProgress = false;
 
-          if (this.scrollDistanceToTheBottom() < 100) {
+          if (this.scrollDistanceToTheBottom() < 150) {
             window.scroll({
               top: document.body.scrollHeight,
               behavior: "smooth",

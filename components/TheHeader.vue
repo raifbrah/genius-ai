@@ -42,7 +42,7 @@ export default {
   align-items: center;
   justify-content: space-between;
 
-  padding: 10px;
+  padding: 15px;
   height: 45px;
 }
 

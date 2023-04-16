@@ -44,7 +44,7 @@ export default {
   align-items: flex-end;
   gap: 5px;
 
-  padding: 7px 7px 20px;
+  padding: 10px 15px 20px;
 }
 
 .input {

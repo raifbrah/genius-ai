@@ -27,7 +27,7 @@ export default {
   computed: {
     titleName() {
       if (this.$route.path === "/") {
-        return "ChatGPT";
+        return "Genius AI";
       } else if (this.$route.path === "/settings") {
         return "Настройки";
       }

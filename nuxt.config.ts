@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
-    baseURL: "/genius-ai/",
+    baseURL: "https://raifbrah.github.io/genius-ai/",
     head: {
       title: "Genius AI",
     },

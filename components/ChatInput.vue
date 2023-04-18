@@ -40,6 +40,11 @@ export default {
 
 <style scoped>
 .chat-input {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
   display: flex;
   align-items: flex-end;
   gap: 5px;

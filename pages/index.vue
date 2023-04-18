@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="index container">
     <TheHeader @clear-chat="clearChat" class="the-header" />
     <TheChats :typingProgress="typingProgress" :chats="chats" />
     <ChatInput
@@ -138,10 +138,7 @@ export default {
 </script>
 
 <style scoped>
-.chat-input {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
+.index {
+  position: relative;
 }
 </style>

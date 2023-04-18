@@ -1,5 +1,6 @@
 {
-  "name": "nuxt-app",
+  "name": "genius-ai",
+  "description": "Fast AI Chat",
   "private": true,
   "scripts": {
     "build": "nuxt build",
@@ -9,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@kevinmarrec/nuxt-pwa": "^0.17.0",
     "nuxt": "^3.3.3"
   },
   "dependencies": {

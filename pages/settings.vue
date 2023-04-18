@@ -1,11 +1,3 @@
-<script setup>
-definePageMeta({
-  pageTransition: {
-    name: "back",
-  },
-});
-</script>
-
 <template>
   <div class="settings">
     <div class="container">

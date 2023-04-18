@@ -136,9 +136,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.index {
-  position: relative;
-}
-</style>

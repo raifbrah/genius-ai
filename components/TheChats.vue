@@ -42,7 +42,7 @@ export default {
 }
 
 .chat {
-  width: 80%;
+  width: 87.5%;
   max-width: max-content;
   padding: 10px 13px;
   background: var(--color_systemGray);

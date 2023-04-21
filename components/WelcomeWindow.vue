@@ -73,16 +73,18 @@ export default {
     };
   },
   mounted() {
-    if (localStorage.getItem("WelcomeWindowVisibility")) {
+    if (
+      localStorage.getItem("apiKey") &&
+      localStorage.getItem("apiKey").trim() !== ""
+    ) {
       this.visibility = false;
     } else {
       this.visibility = true;
     }
   },
   methods: {
-    close() {
+    async close() {
       this.visibility = false;
-      localStorage.setItem("WelcomeWindowVisibility", false);
     },
   },
 };

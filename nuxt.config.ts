@@ -1,11 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  // nitro: {
+  //   preset: "github-pages",
+  // },
+  // ssr: false,
   app: {
-    // cdnURL: "https://raifbrah.github.io/genius-ai/",
-    baseURL: "/genius-ai/",
-    head: {
-      title: "Genius AI",
-    },
+    // baseURL: "/genius-ai/",
+    // head: {
+    //   title: "Genius AI",
+    // },
   },
   // modules: ["@kevinmarrec/nuxt-pwa"],
   // pwa: {

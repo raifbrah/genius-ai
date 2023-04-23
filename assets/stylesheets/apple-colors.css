@@ -28,14 +28,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color_systemGray: #171717;
+    --color_systemGray: #222222;
 
     --color_bg: #000;
     --color_font: #fff;
     --color_border: #fff1;
 
     --color_settingsBg: #000;
-    --color_settingsCategoryBg: #111;
+    --color_settingsCategoryBg: #171717;
     --color_settingsCategoryBorder: #333;
 
     --color_popupWindowShadow: #090909;

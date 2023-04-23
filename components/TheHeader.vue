@@ -1,10 +1,10 @@
 <template>
   <header class="header blur-panel">
     <div class="header__left">
-      <NuxtLink v-if="$route.path === '/'" to="/settings" class="header__btn"
+      <NuxtLink v-if="$route.path === '/'" to="/settings/" class="header__btn"
         >Настройки</NuxtLink
       >
-      <NuxtLink v-if="$route.path === '/settings'" to="/" class="header__btn"
+      <NuxtLink v-if="$route.path === '/settings/'" to="/" class="header__btn"
         >Назад</NuxtLink
       >
     </div>
@@ -28,7 +28,7 @@ export default {
     titleName() {
       if (this.$route.path === "/") {
         return "Genius AI";
-      } else if (this.$route.path === "/settings") {
+      } else if (this.$route.path === "/settings/") {
         return "Настройки";
       }
     },

@@ -3,10 +3,15 @@ export default defineNuxtConfig({
   app: {
     head: {
       meta: [
-        { name: "theme-color", content: "#ffffff" },
         {
-          name: "apple-mobile-web-app-status-bar-style",
+          name: "theme-color",
+          media: "(prefers-color-scheme: light)",
           content: "#ffffff",
+        },
+        {
+          name: "theme-color",
+          media: "(prefers-color-scheme: dark)",
+          content: "#000000",
         },
       ],
       title: "Genius AI",

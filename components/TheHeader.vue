@@ -70,4 +70,8 @@ export default {
   text-decoration: none;
   color: var(--color_systemBlue);
 }
+
+.blur-panel {
+  border-bottom: 1px solid var(--color_border);
+}
 </style>

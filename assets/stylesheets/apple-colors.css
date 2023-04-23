@@ -14,7 +14,7 @@
 
   --color_bg: #fff;
   --color_font: #000;
-  --color_border: #fff1;
+  --color_border: #ccc;
 
   --color_settingsBg: #eee;
   --color_settingsCategoryBg: #fff;
@@ -27,6 +27,7 @@
 
     --color_bg: #000;
     --color_font: #fff;
+    --color_border: #fff1;
 
     --color_settingsBg: #000;
     --color_settingsCategoryBg: #111;

@@ -52,6 +52,10 @@ export default {
   padding: 10px 15px 20px;
 }
 
+.blur-panel {
+  border-top: 1px solid var(--color_border);
+}
+
 .input {
   height: 35px;
   width: 100%;

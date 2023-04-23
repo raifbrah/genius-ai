@@ -104,7 +104,7 @@ p {
   max-height: calc(100vh - 40px);
   min-height: 250px;
   overflow-y: auto;
-  background: #000;
+  background: var(--color_bg);
   padding: 20px;
   border-radius: 20px;
 

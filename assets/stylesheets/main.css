@@ -66,8 +66,7 @@ a {
   align-items: center;
   justify-content: center;
 
-  background: #0005;
-  background: var(--blurBg);
+  background: var(--color_blurBg);
   backdrop-filter: saturate(180%) blur(5px);
   -webkit-backdrop-filter: saturate(180%) blur(5px);
 }

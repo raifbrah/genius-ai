@@ -42,4 +42,10 @@
     translate: 0px -2px;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .typing-progress {
+    border: none;
+  }
+}
 </style>

@@ -60,8 +60,11 @@ export default {
   font-family: inherit;
   padding: 10px;
   outline: none;
-  border: 1px solid #aaa;
+  border: 1px solid var(--color_border);
   border-radius: 300px;
+
+  color: var(--color_font);
+  background: var(--color_bg);
 }
 
 .send-button {

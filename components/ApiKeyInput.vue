@@ -96,6 +96,9 @@ export default {
   outline: none;
   border: none;
   width: 100%;
+
+  color: var(--color_font);
+  background: var(--color_bg);
 }
 
 .api-key-input__button {
@@ -106,6 +109,15 @@ export default {
 @media (max-width: 320px) {
   .api-key-input {
     flex-direction: column;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .api-key-input {
+    border: none;
+  }
+  .api-key-input__input {
+    background: #111;
   }
 }
 </style>

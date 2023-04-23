@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
+meta[name="theme-color"] {
+  content: var(--color_bg);
+}
+meta[name="apple-mobile-web-app-status-bar-style"] {
+  content: var(--color_bg);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -32,6 +39,9 @@ body {
   font-size: 18px;
   margin: 0;
   padding: 0;
+
+  color: var(--color_font);
+  background: var(--color_bg);
 }
 input {
   font-size: 16px;
@@ -57,6 +67,7 @@ a {
   justify-content: center;
 
   background: #0005;
+  background: var(--blurBg);
   backdrop-filter: saturate(180%) blur(5px);
   -webkit-backdrop-filter: saturate(180%) blur(5px);
 }
@@ -72,4 +83,11 @@ a {
   margin: 0 auto;
   max-width: 768px;
   padding: 60px 15px 100px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .blur-panel {
+    border: 1px solid var(--color_border);
+    background: #111c;
+  }
 }

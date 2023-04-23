@@ -109,4 +109,10 @@ export default {
     rotate: 360deg;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .wrapper {
+    background: #222;
+  }
+}
 </style>

@@ -46,7 +46,6 @@ export default {
   max-width: max-content;
   padding: 10px 13px;
   background: var(--color_systemGray);
-  border: 1px solid #e7e7e7;
   border-radius: 17px;
 }
 .chat_user {

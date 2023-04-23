@@ -2,7 +2,17 @@
 export default defineNuxtConfig({
   app: {
     head: {
+      meta: [
+        { name: "theme-color", content: "#ffffff" },
+        {
+          name: "apple-mobile-web-app-status-bar-style",
+          content: "#ffffff",
+        },
+      ],
       title: "Genius AI",
+      link: [
+        { rel: "apple-touch-icon", href: "./public/apple-touch-icon.png" },
+      ],
     },
   },
   modules: ["@kevinmarrec/nuxt-pwa"],

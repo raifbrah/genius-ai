@@ -104,9 +104,11 @@ p {
   max-height: calc(100vh - 40px);
   min-height: 250px;
   overflow-y: auto;
-  background: #fff;
+  background: #000;
   padding: 20px;
   border-radius: 20px;
+
+  border: 1px solid var(--color_border);
 }
 .welcome-window__buttons {
   gap: 5px;

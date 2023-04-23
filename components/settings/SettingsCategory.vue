@@ -30,7 +30,7 @@ export default {
   flex-direction: column;
 
   padding-left: 20px;
-  background: #fff;
+  background: var(--color_settingsCategoryBg);
   border-radius: 17px;
 }
 </style>

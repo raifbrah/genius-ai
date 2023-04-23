@@ -156,7 +156,7 @@ export default {
 <style scoped>
 .settings {
   min-height: 100vh;
-  background: #eee;
+  background: var(--color_settingsBg);
 }
 .container {
   gap: 25px;
@@ -171,7 +171,7 @@ export default {
 
   min-height: 40px;
   padding: 10px 10px 10px 0px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--color_settingsCategoryBorder);
 }
 .elem:last-child {
   border-bottom: none;
@@ -182,6 +182,9 @@ export default {
   border: none;
   outline: none;
   font-size: inherit;
+
+  color: var(--color_font);
+  background: var(--color_settingsCategoryBg);
 }
 .elem__button {
   width: 100%;

@@ -68,7 +68,7 @@ export default {
   border-radius: 300px;
 
   color: var(--color_font);
-  background: var(--color_bg);
+  background: #fff;
 }
 
 .send-button {
@@ -80,5 +80,12 @@ export default {
 }
 .send-button_disabled {
   opacity: 0.5;
+}
+
+@media (prefers-color-scheme: dark) {
+  .input {
+    border: none;
+    background: #fff2;
+  }
 }
 </style>

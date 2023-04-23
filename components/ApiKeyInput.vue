@@ -117,7 +117,7 @@ export default {
     border: none;
   }
   .api-key-input__input {
-    background: #111;
+    background: #222;
   }
 }
 </style>

@@ -16,7 +16,16 @@ export default defineNuxtConfig({
       ],
       title: "Genius AI",
       link: [
-        { rel: "apple-touch-icon", href: "./public/apple-touch-icon.png" },
+        {
+          rel: "apple-touch-icon",
+          sizes: "180x180",
+          href: "./public/apple-touch-icon.png",
+        },
+        {
+          rel: "mask-icon",
+          href: "./public/masked-icon.svg",
+          color: "#FFFFFF",
+        },
       ],
     },
   },
@@ -25,8 +34,7 @@ export default defineNuxtConfig({
     manifest: {
       name: "Genius AI",
       short_name: "Genius AI",
-      lang: "ru",
-      description: "Fast AI Chat",
+      description: "Genius - Fast AI Chat",
     },
   },
 });

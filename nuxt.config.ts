@@ -15,18 +15,6 @@ export default defineNuxtConfig({
         },
       ],
       title: "Genius AI",
-      link: [
-        {
-          rel: "apple-touch-icon",
-          sizes: "180x180",
-          href: "./public/apple-touch-icon.png",
-        },
-        {
-          rel: "mask-icon",
-          href: "./public/masked-icon.svg",
-          color: "#FFFFFF",
-        },
-      ],
     },
   },
   modules: ["@kevinmarrec/nuxt-pwa"],
@@ -35,6 +23,9 @@ export default defineNuxtConfig({
       name: "Genius AI",
       short_name: "Genius AI",
       description: "Genius - Fast AI Chat",
+    },
+    icon: {
+      maskablePadding: 0,
     },
   },
 });

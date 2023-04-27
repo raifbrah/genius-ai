@@ -184,7 +184,7 @@ export default {
   font-size: inherit;
 
   color: var(--color_font);
-  background: var(--color_settingsCategoryBg);
+  background: transparent;
 }
 .elem__button {
   width: 100%;

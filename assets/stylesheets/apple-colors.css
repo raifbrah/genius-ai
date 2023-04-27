@@ -35,7 +35,7 @@
     --color_border: #fff1;
 
     --color_settingsBg: #000;
-    --color_settingsCategoryBg: #171717;
+    --color_settingsCategoryBg: var(--color_systemGray);
     --color_settingsCategoryBorder: #333;
 
     --color_popupWindowShadow: #090909;

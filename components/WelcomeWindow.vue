@@ -46,10 +46,10 @@
       </div>
 
       <div class="welcome-window__buttons">
-        <TheButton v-if="page > 1" @click="page--" title="Назад" />
+        <TheButton v-if="page > 1" @click="previousPage()" title="Назад" />
         <TheButton
           v-if="page < 2"
-          @click="page++"
+          @click="nextPage()"
           title="Дальше"
           class="welcome-window__button_right"
         />
@@ -73,6 +73,10 @@ export default {
     };
   },
   mounted() {
+    if (localStorage.getItem("WelcomePage_pageNumber")) {
+      this.page = JSON.parse(localStorage.getItem("WelcomePage_pageNumber"));
+    }
+
     if (
       localStorage.getItem("apiKey") &&
       localStorage.getItem("apiKey").trim() !== ""
@@ -83,8 +87,16 @@ export default {
     }
   },
   methods: {
-    async close() {
+    close() {
       this.visibility = false;
+    },
+    nextPage() {
+      this.page++;
+      localStorage.setItem("WelcomePage_pageNumber", this.page);
+    },
+    previousPage() {
+      this.page--;
+      localStorage.setItem("WelcomePage_pageNumber", this.page);
     },
   },
 };

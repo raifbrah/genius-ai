@@ -15,7 +15,6 @@
   width: 55px;
   height: 30px;
   background: var(--color_systemGray);
-  border: 1px solid #e1e1e1;
   border-radius: 7px;
 }
 .typing-progress__circle {

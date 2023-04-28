@@ -46,6 +46,14 @@
             >Instagram</a
           >
         </div>
+        <div class="elem">
+          <a
+            class="elem__button"
+            target="_blank"
+            href="https://disk.yandex.ru/i/6KLOGC6I1nGQpg"
+            >Политика конфиденциальности</a
+          >
+        </div>
       </SettingsCategory>
 
       <SettingsCategory title="Поддержать разработчика донатом">

@@ -31,19 +31,23 @@ export default {
       localStorage.setItem("chats", JSON.stringify(this.chats));
     },
     async sendMyMessage(myMessage) {
-      this.generationProcess = true;
-      this.typingProgress = true;
-      this.chats.push({
-        role: "user",
-        content: myMessage,
-      });
-      localStorage.setItem("chats", await JSON.stringify(this.chats));
-      window.scroll({
-        top: document.body.scrollHeight,
-        behavior: "smooth",
-      });
+      if (myMessage.trim() === "clear") {
+        this.clearChat();
+      } else {
+        this.generationProcess = true;
+        this.typingProgress = true;
+        this.chats.push({
+          role: "user",
+          content: myMessage,
+        });
+        localStorage.setItem("chats", await JSON.stringify(this.chats));
+        window.scroll({
+          top: document.body.scrollHeight,
+          behavior: "smooth",
+        });
 
-      this.generatingResponse();
+        this.generatingResponse();
+      }
     },
     async generatingResponse() {
       try {

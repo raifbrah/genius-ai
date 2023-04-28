@@ -43,6 +43,10 @@
           со включенным VPN.
         </p>
         <ApiKeyInput class="api-key-input-component" />
+        <p>
+          P.S. Приложением можно пользоваться без VPN, его нужно включить только
+          для того, чтобы получить API ключ.
+        </p>
       </div>
 
       <div class="welcome-window__buttons">
@@ -145,6 +149,6 @@ p {
 }
 
 .api-key-input-component {
-  margin-top: 20px;
+  margin: 20px 0px;
 }
 </style>

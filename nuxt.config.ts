@@ -6,12 +6,12 @@ export default defineNuxtConfig({
         {
           name: "theme-color",
           media: "(prefers-color-scheme: light)",
-          content: "#ffffff",
+          content: "#F1F1F1",
         },
         {
           name: "theme-color",
           media: "(prefers-color-scheme: dark)",
-          content: "#000000",
+          content: "#0D0D0D",
         },
       ],
       title: "Genius AI",

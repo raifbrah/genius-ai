@@ -27,7 +27,8 @@ export default defineNuxtConfig({
       ],
       script: [
         {
-          src: "./public/app.js",
+          type: "module",
+          src: "./app.js",
         },
       ],
     },

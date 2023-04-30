@@ -1,6 +1,6 @@
 const dynamicCacheName = "d-app-v1";
 
-const assetUrls = ["./index.html"];
+const assetUrls = ["./index.html", "./settings/index.html"];
 
 self.addEventListener("install", async (event) => {
   const cache = await caches.open(dynamicCacheName);

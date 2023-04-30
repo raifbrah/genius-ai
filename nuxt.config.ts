@@ -15,17 +15,21 @@ export default defineNuxtConfig({
         },
       ],
       title: "Genius AI",
-    },
-  },
-  modules: ["@kevinmarrec/nuxt-pwa"],
-  pwa: {
-    manifest: {
-      name: "Genius AI",
-      short_name: "Genius AI",
-      description: "Genius - Fast AI Chat",
-    },
-    icon: {
-      maskablePadding: 0,
+      link: [
+        {
+          rel: "manifest",
+          href: "./manifest.json",
+        },
+        {
+          rel: "apple-touch-icon",
+          href: "./public/icons/ios/512.png",
+        },
+      ],
+      script: [
+        {
+          src: "./public/app.js",
+        },
+      ],
     },
   },
 });

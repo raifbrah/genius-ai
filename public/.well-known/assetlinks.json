@@ -1,6 +1,10 @@
-[{
-        "relation": ["delegate_permission/common.handle_all_urls"],
-        "target" : { "namespace": "android_app", "package_name": "ru.genius_ai.twa",
-                     "sha256_cert_fingerprints": ["E8:D0:94:0C:82:9C:27:87:E8:E6:FE:8E:DF:BB:7F:90:B1:FA:D6:66:FB:8B:70:92:D7:A5:2D:0D:D9:31:9D:89"] }
-      }
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target" : {
+      "namespace": "android_app",
+      "package_name": "ru.genius_ai.twa",
+      "sha256_cert_fingerprints": ["88:3D:8C:DE:8D:C0:FB:E9:41:29:C3:30:FF:C4:63:D8:A0:A8:00:4B:19:8B:C4:97:18:46:3A:7F:EF:2A:DF:EF"]
+    }
+  }
 ]

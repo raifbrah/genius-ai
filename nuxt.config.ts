@@ -25,12 +25,6 @@ export default defineNuxtConfig({
           href: "./icons/ios/512.png",
         },
       ],
-      script: [
-        {
-          type: "module",
-          src: "./app.js",
-        },
-      ],
     },
   },
 });

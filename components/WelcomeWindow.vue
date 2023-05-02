@@ -26,6 +26,14 @@
           Для получения API ключа необходимо:
           <ol>
             <li>
+              Обязательно прочитать
+              <a
+                href="https://sore-moat-1fb.notion.site/ef0acb6113164e8b814c11cde89a782d"
+                target="_blank"
+                >инструкцию по получению API ключа</a
+              >
+            </li>
+            <li>
               Перейти по
               <a
                 href="https://platform.openai.com/account/api-keys"
